@@ -3,6 +3,7 @@ header( 'Content-type: text/html; charset=utf-8' );
 
 // Configs
 $ordecacaoAsc = filter_input( INPUT_GET, 'ordem' ) === 'asc';
+$clientId = filter_input( INPUT_GET, 'clientId' );
 
 require_once 'Cliente.php';
 
@@ -19,7 +20,21 @@ $clientes = [
     new Cliente( 'José', '999999999-99', 'Rua das flores', 30, 'Serra negra', 'SP' )
 ];
 
-if( ! $ordecacaoAsc )
+// Detalhes do cliente?
+if ( is_numeric( $clientId ) && $clientId >= 0 && $clientId < count( $clientes ) ) {
+    $cliente = $clientes[ $clientId ];
+    ?>
+    <p>
+        <strong>ID:</strong> <?= $clientId ?><br>
+        <strong>Nome:</strong> <?= $cliente->nome ?><br>
+        <strong>CPF:</strong> <?= $cliente->cpf ?><br>
+        <strong>Endereço:</strong>
+        <?= $cliente->logradouro ?>, <?= $cliente->numero ?> - <?= $cliente->cidade ?>/<?= $cliente->uf ?><hr>
+    </p>
+    <?php
+}
+
+if ( ! $ordecacaoAsc )
     krsort( $clientes )
 
 ?>
@@ -31,9 +46,10 @@ if( ! $ordecacaoAsc )
     <?php
     foreach ( $clientes as $index => $cliente ) {
         ?>
-        <tr>
+        <tr class="cliente">
             <td><strong><?= $index ?></strong></td>
-            <td><strong><?= $cliente->nome ?></strong></td>
+            <td><a href="?clientId=<?= $index ?>&ordem=<?= $ordecacaoAsc ? 'asc' : 'desc' ?>"><?= $cliente->nome ?></a>
+            </td>
         </tr>
         <?php
     }
