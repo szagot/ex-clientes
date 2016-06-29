@@ -8,6 +8,7 @@ class Cliente
     private $numero;
     private $cidade;
     private $uf;
+    protected $importancia;
 
     /**
      * Cliente constructor.

@@ -2,7 +2,6 @@
 
 class ClienteFisico extends Cliente implements Empresa
 {
-    protected $importancia;
 
     public function __construct( $nome, $cpf, $logradouro, $numero, $cidade, $uf, $importancia = 1 )
     {
