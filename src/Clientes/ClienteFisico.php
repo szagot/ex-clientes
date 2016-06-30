@@ -1,6 +1,7 @@
 <?php
+namespace Clientes;
 
-class ClienteJuridico extends Cliente implements Empresa
+class ClienteFisico extends Cliente implements Util\Empresa
 {
 
     public function __construct( $nome, $cpf, $logradouro, $numero, $cidade, $uf, $importancia = 1 )

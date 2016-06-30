@@ -1,4 +1,5 @@
 <?php
+namespace Clientes\Util;
 
 Interface Empresa
 {
