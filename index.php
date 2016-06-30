@@ -1,21 +1,25 @@
 <?php
 require_once '_loader.php';
 
+use 
+    Clientes\ClienteFisico,
+    Clientes\ClienteJuridico;
+
 // Configs
 $ordecacaoAsc = filter_input( INPUT_GET, 'ordem' ) === 'asc';
 $clientId = filter_input( INPUT_GET, 'clientId' );
 
 $clientes = [
-    new Clientes\ClienteFisico( 'Daniel', '999999999-99', 'Rua das flores', 35, 'Serra negra', 'SP', 5 ),
-    new Clientes\ClienteFisico( 'Kamile', '999999999-99', 'Rua das flores', 25, 'São Paulo', 'SP', 4 ),
-    new Clientes\ClienteFisico( 'Tatiane', '999999999-99', 'Rua das flores', 84, 'São Paulo', 'SP', 5 ),
-    new Clientes\ClienteJuridico( 'TMW E-commerce', '999999999-99', 'Rua das flores', 37, 'Serra negra', 'SP', 5 ),
-    new Clientes\ClienteJuridico( 'Google', '999999999-99', 'Rua das flores', 88, 'Serra negra', 'SP', 4 ),
-    new Clientes\ClienteJuridico( 'Microsoft', '999999999-99', 'Rua das flores', 99, 'São Paulo', 'SP', 2 ),
-    new Clientes\ClienteFisico( 'Antony', '999999999-99', 'Rua das flores', 1, 'Serra negra', 'SP' ),
-    new Clientes\ClienteFisico( 'João', '999999999-99', 'Rua das flores', 10, 'São Paulo', 'SP', 3 ),
-    new Clientes\ClienteJuridico( 'Code Education', '999999999-99', 'Rua das flores', 15, 'Serra negra', 'SP' ),
-    new Clientes\ClienteFisico( 'José', '999999999-99', 'Rua das flores', 30, 'Serra negra', 'SP' )
+    new ClienteFisico( 'Daniel', '999999999-99', 'Rua das flores', 35, 'Serra negra', 'SP', 5 ),
+    new ClienteFisico( 'Kamile', '999999999-99', 'Rua das flores', 25, 'São Paulo', 'SP', 4 ),
+    new ClienteFisico( 'Tatiane', '999999999-99', 'Rua das flores', 84, 'São Paulo', 'SP', 5 ),
+    new ClienteJuridico( 'TMW E-commerce', '999999999-99', 'Rua das flores', 37, 'Serra negra', 'SP', 5 ),
+    new ClienteJuridico( 'Google', '999999999-99', 'Rua das flores', 88, 'Serra negra', 'SP', 4 ),
+    new ClienteJuridico( 'Microsoft', '999999999-99', 'Rua das flores', 99, 'São Paulo', 'SP', 2 ),
+    new ClienteFisico( 'Antony', '999999999-99', 'Rua das flores', 1, 'Serra negra', 'SP' ),
+    new ClienteFisico( 'João', '999999999-99', 'Rua das flores', 10, 'São Paulo', 'SP', 3 ),
+    new ClienteJuridico( 'Code Education', '999999999-99', 'Rua das flores', 15, 'Serra negra', 'SP' ),
+    new ClienteFisico( 'José', '999999999-99', 'Rua das flores', 30, 'Serra negra', 'SP' )
 ];
 
 // Detalhes do cliente?
