@@ -1,7 +1,7 @@
 <?php
-namespace Clientes;
+namespace Clientes\Util;
 
-class Cliente
+abstract class Cliente
 {
     private $nome;
     private $cpf;

@@ -1,7 +1,7 @@
 <?php
 namespace Clientes;
 
-class ClienteFisico extends Cliente implements Util\Empresa
+class ClienteFisico extends Util\Cliente implements Util\Empresa
 {
 
     public function __construct( $nome, $cpf, $logradouro, $numero, $cidade, $uf, $importancia = 1 )
