@@ -10,17 +10,6 @@ class ClienteFisico extends Util\Cliente implements Util\Empresa
         $this->setImportancia( $importancia );
     }
 
-    /**
-     * @return mixed
-     */
-    public function getImportancia()
-    {
-        return $this->importancia;
-    }
-
-    /**
-     * @param mixed $importancia
-     */
     public function setImportancia( $importancia )
     {
         $this->importancia = ( $importancia > 0 && $importancia < 6 ) ? $importancia : 1;

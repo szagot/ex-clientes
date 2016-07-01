@@ -141,4 +141,13 @@ abstract class Cliente
     }
 
 
+    /**
+     * @return mixed
+     */
+    public function getImportancia()
+    {
+        return $this->importancia;
+    }
+
+
 }
